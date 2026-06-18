@@ -39,5 +39,7 @@ runs:
         GITHUB_ACTION_PATH: ${{ github.action_path }}  # Chemin de l’action courante
 
     - name: Run goodbye.sh
-      run: goodbye.sh  # Exécute un script appelé goodbye.sh (doit exister dans le répertoire de l'action)
+      run: 
+        chmod +x goodbye.sh
+        goodbye.sh  # Exécute un script appelé goodbye.sh (doit exister dans le répertoire de l'action)
       shell: bash
