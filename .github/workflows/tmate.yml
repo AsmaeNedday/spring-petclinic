@@ -1,0 +1,16 @@
+name: Debug avec tmate
+on: [workflow_dispatch]
+# Déclenchement manuel recommandé pour le debug
+jobs:
+  debug_session:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du code (optionnel, si besoin d'accéder aux fichiers)
+        uses: actions/checkout@v4
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        timeout-minutes: 15
+# Important pour ne pas bloquer le runner
+        with:
+          limit-access-to-actor: true
+# Recommandé pour la sécurité
