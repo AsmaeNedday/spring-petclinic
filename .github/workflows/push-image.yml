@@ -1,5 +1,5 @@
 name: Push Docker Image
-#on: [push]
+on: [push]
 
 permissions:
   contents: read
