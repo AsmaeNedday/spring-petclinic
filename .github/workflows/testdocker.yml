@@ -1,17 +1,35 @@
-name: "docker workflow
-on:
-  push:
-    branches:
-      - main
+# name: "docker workflow
+# #on:
+#  # push:
+#  #   branches:
+#   #    - main
+
+# jobs:
+#   greet-user:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v4
+
+#     - name: Exécuter l'action Docker
+#       uses: ./.github/actions/my-custom-docker
+#       with:
+#         message: "Salut de l'action Docker"
+name: "Exemple de workflow"
+#on:
+#  push:
+#   branches:
+#      - main
 
 jobs:
   greet-user:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
 
-    - name: Exécuter l'action Docker
-      uses: ./.github/actions/my-custom-docker
+    - name: Dire bonjour
+      uses: ./.github/actions/my-custom-js/
       with:
-        message: "Salut de l'action Docker"
+        username: "Jean"
+        greeting: "Salut"
